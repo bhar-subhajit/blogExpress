@@ -4,7 +4,7 @@
   "description": "This is a blog we created during CodeWithHarry express course",
   "main": "index.js",
   "scripts": {
-    "test": "react-scripts test --passWithNoTests",
+    "test": "jest --passWithNoTests",
     "start": "nodemon"
   },
   "author": "Harry",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^5.3.2"
+    "express-handlebars": "^5.3.2",
+    "jest": "^29.5.0"
   }
 }
