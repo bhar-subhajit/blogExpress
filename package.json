@@ -4,6 +4,7 @@
   "description": "This is a blog we created during CodeWithHarry express course",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest --passWithNoTests"
   },
   "author": "Harry",

@@ -100,7 +100,7 @@ router.get("/movies", (req, res) => {
         stars: "Hugh Jackman, Patrick Stewart, Dafne Keen, Boyd Holbrook",
         plot: "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.",
         image:
-          "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+          "https://en.wikipedia.org/wiki/Star_Wars:_The_Force_Awakens#/media/File:Star_Wars_The_Force_Awakens_Theatrical_Poster.jpg",
         currency: "THB",
         rating: 9.4,
         duration: "02:45:34",
