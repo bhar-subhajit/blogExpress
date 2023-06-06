@@ -29,11 +29,23 @@ router.get("/movies", (req, res) => {
     try {
       // Connect the client to the server	(optional starting in v4.7)
       await client.connect();
-      // Send a ping to confirm a successful connection
-      const collection = await client.db("db").command({ find: "movies" });
-      console.log(collection.cursor.firstBatch[0]);
+
+      const database = client.db("db");
+      const movies = database.collection("movies");
+      const query = { rating: { $gt: 5 } };
+      const options = {
+        // sort returned documents in ascending order by title (A->Z)
+        sort: { title: 1 },
+        // Include only the `title` and `imdb` fields in each returned document
+        // projection: { _id: 0, title: 1, imdb: 1 },
+      };
+      const cursor = movies.find(query, options);
+      const moviesArr = [];
+      for await (const doc of cursor) {
+        moviesArr.push(doc);
+      }
       res.status(200);
-      res.json(collection.cursor.firstBatch[0]);
+      res.json({ movies: moviesArr });
     } finally {
       // Ensures that the client will close when you finish/error
       await client.close();
