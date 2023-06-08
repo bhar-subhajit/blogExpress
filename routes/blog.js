@@ -32,7 +32,7 @@ router.get("/movies", (req, res) => {
 
       const database = client.db("db");
       const movies = database.collection("movies");
-      const query = { rating: { $gt: 4 } };
+      const query = { rating: { $gt: 7 } };
       const options = {
         // sort returned documents in ascending order by title (A->Z)
         sort: { title: 1 },
