@@ -75,7 +75,11 @@ async function saveBooking(req, res) {
     const bookings = database.collection("bookings");
     const cursor = await bookings.insertOne(req.body);
     res.status(200);
-    res.json({ statusCode: "0", statusMsg: "Booking Saved Successfully" });
+    res.json({
+      statusCode: "0",
+      statusMsg: "Booking Saved Successfully",
+      bookingId: cursor.insertedId,
+    });
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
