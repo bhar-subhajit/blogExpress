@@ -30,7 +30,7 @@ router.get("/movies", (req, res) => {
 });
 
 router.post("/booking", bodyParser.json(), (req, res) => {
-  saveBooking(req, res).catch(console.dir);
+  setTimeout(() => saveBooking(req, res).catch(console.dir), 5000);
 });
 
 router.get("/blogpost/:slug", (req, res) => {
@@ -74,7 +74,6 @@ async function saveBooking(req, res) {
     const database = client.db("db");
     const bookings = database.collection("bookings");
     const cursor = await bookings.insertOne(req.body);
-    console.log(cursor);
     res.status(200);
     res.json({ statusCode: "0", statusMsg: "Booking Saved Successfully" });
   } finally {
